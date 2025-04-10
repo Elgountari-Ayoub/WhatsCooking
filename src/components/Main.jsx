@@ -1,4 +1,5 @@
 import React from "react";
+import IngredientsList from "./IngredientsList";
 
 export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
@@ -19,6 +20,9 @@ export default function Main() {
         />
         <button>Add ingredient</button>
       </form>
+      {ingredients.length > 0 && (
+        <IngredientsList ingredients={ingredients} />
+      )}
     </main>
   );
 }
