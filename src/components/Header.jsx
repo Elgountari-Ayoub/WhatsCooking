@@ -3,7 +3,7 @@ export default function Header() {
   return (
     <>
       <header>
-        <img src={WhatsCookingIcon} alt="chef_claude_icon" />
+        <img src={WhatsCookingIcon} alt="WhatsCookingIcon" />
       </header>
     </>
   );

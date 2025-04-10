@@ -1,6 +1,7 @@
 import React from "react";
 import IngredientsList from "./IngredientsList";
 import { getRecipeFromMistral } from "../ai";
+import MistralRecipe from "./MistralRecipe";
 
 export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
@@ -14,7 +15,6 @@ export default function Main() {
   async function getRecipe() {
     const result = await getRecipeFromMistral(ingredients);
     setRecipe(result);
-    console.log(result);
   }
 
   return (
@@ -31,6 +31,8 @@ export default function Main() {
       {ingredients.length > 0 && (
         <IngredientsList ingredients={ingredients} handleClick={getRecipe} />
       )}
+
+      {<MistralRecipe recipe={recipe} />}
     </main>
   );
 }
